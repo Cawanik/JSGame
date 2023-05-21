@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="start">
+    <h1 class="start__title">AstroBeat</h1>
+    <button class="start__button">Начать игру</button>
+    <input type="file">
+</div>
+</body>
+<style>
+    body {
+        overflow: hidden;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    button {
+        border: 0;
+        border-radius: 5px;
+        background-image: linear-gradient(to top right, violet 0%, purple 100%);
+        cursor: pointer;
+        padding: 20px;
+    }
+
+    input {
+        display: none;
+    }
+
+    .start {
+        padding: 20px 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    .triangle {
+        position: absolute;
+        transform-origin: center;
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+    }
+
+    .bullet {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        animation: fire 0.5s;
+    }
+
+    .meteor {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: gray;
+        animation: rotateMeteor infinite 5s;
+    }
+
+    @keyframes fire {
+        from {
+            opacity: 0;
+        }
+        15% {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes rotateMeteor {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<script src="beatRecognition.js"></script>
+<script src="script.js"></script>
+</html>
